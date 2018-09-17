@@ -64,22 +64,66 @@ namespace Move_Picture
         //moves image diagonally (north west)
         private void button1_Click(object sender, EventArgs e)
         {
-            pictureBox1.Location = new Point(pictureBox1.Location.X - 10, pictureBox1.Location.Y - 10);
+            if (pictureBox1.Location.Y > 10)
+            {
+                pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y - 10);
+            }
+            if (pictureBox1.Location.X > 0)
+            {
+                pictureBox1.Location = new Point(pictureBox1.Location.X - 10, pictureBox1.Location.Y);
+            }
         }
         //moves image diagonally (north east)
         private void button2_Click(object sender, EventArgs e)
         {
-            pictureBox1.Location = new Point(pictureBox1.Location.X + 10, pictureBox1.Location.Y - 10);
+            if (pictureBox1.Location.Y > 10)
+            {
+                pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y - 10);
+            }
+            if (pictureBox1.Location.X + 10 < ClientRectangle.Width - pictureBox1.Width)
+            {
+                pictureBox1.Location = new Point(pictureBox1.Location.X + 10, pictureBox1.Location.Y);
+            }
+            else
+            {
+                pictureBox1.Location = new Point(ClientRectangle.Width - pictureBox1.Width, pictureBox1.Location.Y);
+            }
         }
         //moves image diagonally (south west)
         private void button3_Click(object sender, EventArgs e)
         {
-            pictureBox1.Location = new Point(pictureBox1.Location.X - 10, pictureBox1.Location.Y + 10);
+            if (pictureBox1.Location.Y + 10 < ClientRectangle.Height - pictureBox1.Height)
+            {
+                pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y + 10);
+            }
+            else
+            {
+                pictureBox1.Location = new Point(pictureBox1.Location.X, ClientRectangle.Height - pictureBox1.Height);
+            }
+            if (pictureBox1.Location.X > 0)
+            {
+                pictureBox1.Location = new Point(pictureBox1.Location.X - 10, pictureBox1.Location.Y);
+            }
         }
         //moves image diagonally (south east)
         private void button4_Click(object sender, EventArgs e)
         {
-            pictureBox1.Location = new Point(pictureBox1.Location.X + 10, pictureBox1.Location.Y + 10);
+            if (pictureBox1.Location.Y + 10 < ClientRectangle.Height - pictureBox1.Height)
+            {
+                pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y + 10);
+            }
+            else
+            {
+                pictureBox1.Location = new Point(pictureBox1.Location.X, ClientRectangle.Height - pictureBox1.Height);
+            }
+            if (pictureBox1.Location.X + 10 < ClientRectangle.Width - pictureBox1.Width)
+            {
+                pictureBox1.Location = new Point(pictureBox1.Location.X + 10, pictureBox1.Location.Y);
+            }
+            else
+            {
+                pictureBox1.Location = new Point(ClientRectangle.Width - pictureBox1.Width, pictureBox1.Location.Y);
+            }
         }
     }
 }
