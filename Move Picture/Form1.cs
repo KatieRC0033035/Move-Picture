@@ -24,17 +24,25 @@ namespace Move_Picture
         //Moves image to the right
         private void RightButton_Click(object sender, EventArgs e)
         {
-            if (pictureBox1.Location.X < ClientRectangle.Width - pictureBox1.Width)
+            if (pictureBox1.Location.X + 10 < ClientRectangle.Width - pictureBox1.Width)
             {
                 pictureBox1.Location = new Point(pictureBox1.Location.X + 10, pictureBox1.Location.Y);
+            }
+            else
+            {
+                pictureBox1.Location = new Point(ClientRectangle.Width - pictureBox1.Width, pictureBox1.Location.Y);
             }
         }
         //Moves image down
         private void DownButton_Click(object sender, EventArgs e)
         {
-            if (pictureBox1.Location.Y + 10 < ClientRectangle.Height- pictureBox1.Height)
+            if (pictureBox1.Location.Y + 10 < ClientRectangle.Height - pictureBox1.Height)
             {
                 pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y + 10);
+            }
+            else
+            {
+                pictureBox1.Location = new Point(pictureBox1.Location.X, ClientRectangle.Height - pictureBox1.Height);
             }
         }
         //Moves image to the left
